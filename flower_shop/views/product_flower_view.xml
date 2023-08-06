@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_flower_shop_variant_form_inherit">
+            <field name="name">flower.shop.variant.form.inherit</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='categ_id']" position="after">
+                    <field name="flower_shop_id"/>
+                </xpath>
+
+
+            </field>
+        </record>
+    </data>
+</odoo>
