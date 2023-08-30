@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <report
+                id="report_sale_order_flowers_report"
+                model="sale.order"
+                string="Flowers"
+                name="coreline_btco.sale_order_document"
+                file="coreline_btco.sale_order_document"
+                report_type="qweb-pdf"
+                paperformat="coreline_btco.sale_order_paper_format"/>
+
+        <template id="sale_order_document">
+            <t t-call="web.html_container">
+
+                <t t-set="report_header_style" t-value="'display: none;'"/>
+                <t t-set="footer" t-value="'oe_hidden'"/>
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <center>
+                            <h6>
+                                <t t-esc="request.env.company.name"/>
+                            </h6>
+                        </center>
+                    </div>
+                </t>
+                <t t-foreach="docs" t-as="doc">
+                    <t t-foreach="doc.order_line.product_id.flower_id" t-as="flower">
+                        <t t-call="web.external_layout">
+                            <div class="page">
+                                <h4>Flower Details</h4><br/>
+                                Name: <t t-esc="flower.name"/><br/>
+                                Scientific Name: <t t-esc="flower.scientific_name"/><br/>
+                                Watering Amount: <t t-esc="flower.watering_amount"/> mm<br/>
+                                Watering Frequency: water once every <t t-esc="flower.watering_frequency"/> days<br/>
+                                Season: <t t-esc="flower.date_from"/> To <t t-esc="flower.date_to"/><br/>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>

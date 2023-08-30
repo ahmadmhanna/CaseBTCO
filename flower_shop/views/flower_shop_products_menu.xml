@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <!-- Menu item for Flower Products under Sales/Products -->
+        <menuitem id="menu_flowerss_productss" name="Flower Products" action="action_flower_product"
+                  parent="sale.product_menu_catalog" sequence="2"/>
+    </data>
+</odoo>

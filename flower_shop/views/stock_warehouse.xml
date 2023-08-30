@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="stock_warehouse_form_inherit" model="ir.ui.view">
+            <field name="name">stock_warehouse.form</field>
+            <field name="model">stock.warehouse</field>
+            <field name="inherit_id" ref="stock.view_warehouse"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="before">
+                    <header>
+                        <button name="get_weather_data" type="object" string="Get Weather Data"/>
+                    </header>
+                </xpath>
+                <xpath expr="//sheet" position="inside">
+                    <notebook>
+                        <page string="Weather Data">
+                            <field name="weather_ids" mode="tree">
+                                <tree string="Weather_tree" create="false" delete="false">
+                                    <field name="temperature"/>
+                                    <field name="pressure"/>
+                                    <field name="humidity"/>
+                                    <field name="wind_speed"/>
+                                    <field name="rain_volume"/>
+                                    <field name="capture_time"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

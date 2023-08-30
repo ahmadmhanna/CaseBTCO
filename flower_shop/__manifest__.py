@@ -1,0 +1,36 @@
+{
+    'name': 'Flower Shop ',
+    'version': '1.0',
+    'summary': 'A brief description of your module',
+    'description': 'A longer description of your module',
+    'category': 'Uncategorized',
+    'author': 'ahmad',
+    'website': 'https://www.example.com',
+    'depends': ['base','product','sale_management','website_sale','sale_stock','stock'],
+    'data': [
+        'views/flower_shop_views.xml',
+        'views/flower_shop_form.xml',
+        'views/flower_shop_tree.xml',
+        'views/flower_shop_menu.xml',
+        'security/ir.model.access.csv',
+        'views/product_flower_view.xml',
+        'views/flower_only_products_action.xml',
+        'views/flower_only_products_menu.xml',
+        'views/flower_in_products_menu.xml',
+        'views/sale_order_line_form_inherit.xml',
+        'views/flower_shop_template.xml',
+        'views/templates.xml',
+        'views/stock_lot_view.xml',
+        'views/stock_warehouse.xml',
+        'data/server_actions.xml',
+        'data/paper_format.xml',
+        'data/parameters.xml',
+        'data/scheduled_actions.xml',
+        'reports/sale_order_flowers.xml'
+        'views/product_template.xml',
+
+
+    ],
+    'installable': True,
+    'application': True,
+}
