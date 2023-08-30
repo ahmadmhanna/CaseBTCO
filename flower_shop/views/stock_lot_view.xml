@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="stock_lot_form_inherit" model="ir.ui.view">
+            <field name="name">stock_lot_template.form</field>
+            <field name="model">stock.lot</field>
+            <field name="inherit_id" ref="stock.view_production_lot_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="before">
+                    <button name="water_flower" string="Submit" type="object"/>
+
+                </xpath>
+                <xpath expr="//page[@name='description']" position="after">
+                        <page string="Watering Time" name="watering_time">
+                            <field name="flower_water_id" mode="tree" >
+                                                            <tree string="Watering_tree" create="false" delete="false">
+                                <field name="watering_datetime"/>
+                                                            </tree>
+                            </field>
+                        </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
