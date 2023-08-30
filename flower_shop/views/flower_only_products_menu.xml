@@ -1,9 +1,0 @@
-<odoo>
-    <data>
-        <record model="ir.ui.menu" id="menu_flower_only_products">
-            <field name="name">Flower Products</field>
-            <field name="sequence" eval="10"/>
-            <field name="action" ref="action_flower_only_products"/>
-        </record>
-    </data>
-</odoo>
